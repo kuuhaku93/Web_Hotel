@@ -1,0 +1,25 @@
+{% extends "hotel/demo.html" %}
+{% load static %}
+{% block content %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="UserName" class="form-label">Tên khách hàng</label>
+            {{f.UserName}}
+        </div>
+        <div class="mb-3">
+            <label for="UserID" class="form-label">Mã khách hàng</label>
+            {{f.UserID}}
+        </div>
+        <div class="mb-3">
+            <label for="BookingCost" class="form-label">Giá đặt</label>
+            {{f.BookingCost}}
+        </div>
+        <div class="mb-3">
+            <label for="BookingRoom" class="form-label">Khách sạn đặt</label>
+            {{f.BookingRoom}}
+        </div>
+        <button type="submit" class="btn btn-success">Thêm</button>
+    </form>
+{% endblock content %}
+

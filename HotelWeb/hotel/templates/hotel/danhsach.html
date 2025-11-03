@@ -1,0 +1,36 @@
+{% extends "hotel/demo.html" %}
+{% load static %}
+{% block content %}
+  <section>
+    <div class="content">
+      <a href="{% url "themdanhsach" %}"><button class="add">add</button></a>
+      <table>
+        <thead>
+          <tr>
+            <th>tên</th>
+            <th>số phòng</th>
+            <th>vị trí</th>
+            <th>đánh giá</th>
+            <th>giá thuê</th>
+            <th>chức năng</th>
+          </tr>
+        </thead>
+        <tbody>
+           {% for row in hotel %}
+          <tr>
+            <td>{{row.HotelName}}</td>
+            <td>{{row.RoomAvilable}}</td>
+            <td>{{row.Location}}</td>
+            <td>{{row.Rating}}</td>
+            <td>{{row.PricePer}}</td>
+            <td>
+              <a href="{% url "xoadanhsach" row.id %}"><button class="delete-btn btn-danger">delete</button></a>
+            </td>
+          </tr>
+          {% endfor %}          
+        </tbody>
+      </table>
+    </div>
+  </section>
+{% endblock content %}
+

@@ -1,0 +1,49 @@
+{% extends "hotel/demo.html" %}
+{% load static %}
+{% block content %}
+<section>
+    <div class="chonvitri">
+      <div><label for="city">Chọn vị trí:</label></div>
+      <div>
+        <form action="{% url "vitri" %}" method="post">
+        <select id="city" name="city">
+          <option value="Tất cả" selected >Tất cả</option>
+          {% for row in vitri %}
+            <option value="{{ row.Location }}" {% if row.Location == vitridachon %}selected{% endif %}>
+              {{ row.Location }}
+            </option>        
+          {% endfor %}
+        </select>
+        <button type="submit">Tìm</button>
+        {% csrf_token %}
+        </form>
+      </div>
+    </div>
+    <div class="content">
+      <table>
+        <thead>
+          <tr>
+            <th>tên</th>
+            <th>số phòng</th>
+            <th>vị trí</th>
+            <th>đánh giá</th>
+            <th>giá thuê</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in hotel %}
+          <tr>
+            <td>{{row.HotelName}}</td>
+            <td>{{row.RoomAvilable}}</td>
+            <td>{{row.Location}}</td>
+            <td>{{row.Rating}}</td>
+            <td>{{row.PricePer}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+{% endblock content %}
+
+    

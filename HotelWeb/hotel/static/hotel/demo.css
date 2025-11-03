@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.header {
+  background-color: rgb(0, 100, 88);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  font-size: 14px;
+  align-items: center;
+  color: aliceblue;
+}
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #f5d8d8;
+  padding: 10px 20px;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+.navbar li {
+  padding: 10px;
+}
+.navbar img {
+  height: 60px;
+}
+.navbar__right ul {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.navbar a {
+  color: rgb(38, 37, 37);
+  text-decoration: none;
+  padding: 10px 15px;
+  transition: 0.3s;
+}
+.navbar a:hover {
+  transform: scale(1.1);
+  color: #ff5733;
+}
+footer {
+  background-color: rgb(3, 135, 100);
+  width: 100%;
+  font-size: 14px;
+  align-items: center;
+  text-align: center;
+  padding: 15px 0px;
+  color: rgb(202, 202, 197);
+}
+.img {
+  width: 70%;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+}
+/* trang danh sách phòng trống */
+.content {
+  border: 3px solid black;
+  border-top: none;
+  margin: 0 auto;
+  width: 90%;
+  margin-top: 5px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 3px solid black;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background: #f2f2f2;
+  font-weight: bold;
+}
+
+.icon {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+
+.icon img {
+  width: 40px;
+}
+/* trang vị trí */
+.chonvitri {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin: 5px;
+}
+/* trang danh sách khách sạn */
+.add {
+  background-color: #28a745;
+  color: white;
+  font-size: 18px;
+  padding: 10px 20px;
+  float: right;
+  margin: 10px;
+}
+
+/* trang sắp xếp */
+.sort-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 20px 0;
+}
+
+.sort-buttons button {
+  background: #b9f200;
+  border: 3px solid black;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px 30px;
+  cursor: pointer;
+}

@@ -1,0 +1,36 @@
+{% extends "hotel/demo.html" %}
+{% load static %}
+{% block content %}
+<div class="content">
+  <a href="{% url "themdatphong" %}"><button class="add">add</button></a>
+    <table>
+      <thead>
+        <tr>
+          <th>tên khách</th>
+          <th>tên khách sạn</th>
+          <th>mã khách hàng</th>
+          <th>giá đặt</th>
+          <th>chức năng</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        {% for rowh in hotel %}
+          {% for rowu in user %}
+            {% if rowh.HotelName == rowu.BookingRoom %}
+              <tr>
+                <td>{{rowu.UserName}}</td>
+                <td>{{rowh.HotelName}}</td>
+                <td>{{rowu.UserID}}</td>
+                <td>{{rowu.BookingCost}}</td>
+                <td>
+                  <a href="{% url "xoadatphong" rowu.id %}"><button class="delete-btn btn-danger">delete</button></a>
+                </td>
+              </tr>
+            {% endif %}   
+          {% endfor %}
+        {% endfor %} 
+      </tbody>
+    </table>
+  </div>
+{% endblock content %}

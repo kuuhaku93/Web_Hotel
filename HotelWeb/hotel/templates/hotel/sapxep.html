@@ -1,0 +1,35 @@
+{% extends "hotel/demo.html" %}
+{% load static %}
+{% block content %}
+  <section>
+    <div class="sort-buttons">
+      <a href="{% url "sapxeptheoten" %}"><button>xếp theo tên</button></a>
+      <a href="{% url "sapxeptheorating" %}"><button>xếp theo đánh giá</button></a>
+    </div>
+
+    <div class="content">
+      <table>
+        <thead>
+          <tr>
+            <th>tên</th>
+            <th>số phòng</th>
+            <th>vị trí</th>
+            <th>đánh giá</th>
+            <th>giá thuê</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in hotel %}
+          <tr>
+            <td>{{row.HotelName}}</td>
+            <td>{{row.RoomAvilable}}</td>
+            <td>{{row.Location}}</td>
+            <td>{{row.Rating}}</td>
+            <td>{{row.PricePer}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+{% endblock content %}
